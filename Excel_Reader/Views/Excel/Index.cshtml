@@ -1,0 +1,19 @@
+﻿@model IEnumerable<ExcelReader.Excelservice.Price>
+@{
+
+}
+
+@*<a asp-action="Index" asp-controller="Excel"></a>*@
+
+<div>
+    @using (Html.BeginForm("Import", "Excel", FormMethod.Post, new { enctype = "multipart/form-data", id = "frm-excel" }))
+    {
+        <div>
+            Загрузите файл Excel:
+            <input type="file" name="fileExcel" id="fileExcel" />
+            <div>
+                <input type="submit" value="Загрузить" />
+            </div>
+        </div>
+    }
+</div>

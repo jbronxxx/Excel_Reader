@@ -1,0 +1,35 @@
+﻿@model ExcelReader.Excelservice.ModelList
+
+<div>
+    @Model.NameModel
+    <div>
+        @foreach (ExcelReader.Excelservice.Model modelList in Model.Models)
+        {
+            int priceCounter = 0;
+            <h3>
+                Модель: @modelList.Name
+            </h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Неисправность</th>
+                        @foreach (ExcelReader.Excelservice.Price price in modelList.Prices)
+                        {
+                            <th>@price.PriceName</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Цена</th>
+                        @foreach (ExcelReader.Excelservice.Price servicePrice in modelList.Prices)
+                        {
+                            <td>@servicePrice.ServicePrice</td>
+                        }
+                    </tr>
+                    
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
